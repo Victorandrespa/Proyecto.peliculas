@@ -20,7 +20,7 @@
         </div>
         <br>
 
-        <div class="row justify-content-left d-flex flex-wrap">
+        <div class="row justify-content-center d-flex flex-wrap">
 
             <!-- Lectura de base de datos php -->
             <?php
