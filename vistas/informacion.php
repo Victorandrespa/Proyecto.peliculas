@@ -35,106 +35,106 @@
 
     <h1 class="mt-5"><?php echo $datos['nombre_depto']; ?></h1>
 
-    <div>
-        <a href="peliculas.php" class="btn btn btn-outline-dark mb-3">Regresar</a>
+    <div class="d-flex justify-content-between">
+        <div>
+            <a href="peliculas.php" class="btn btn btn-outline-dark mb-3">Regresar <i class="bi bi-arrow-90deg-left"></i></a>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a href="agregarForm.php" class="btn btn btn-outline-dark mb-3"><i class="bi bi-cloud-arrow-up"></i> Agregar</a>
+            <button class="btn btn-outline-dark ms-1 mb-3">
+                <i class="bi bi-pencil-square"></i> Editar
+            </button>
+        </div>
     </div>
 
 
     <main class="mt-5 min-vh-100">
 
-        <!-- Recibe datos para promedio -->
+    <!-- container de imagen y formulario -->
+        <div class="row align-items-center">
 
-        <form action="" class="row align-items-center mb-3">
-
-            <div class="row align-items-center mb-3">
-                <div class="col-md-2">
-                    <label for="input_id" class="form-label">ID:</label>
-                </div>
-                <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_id" value="<?php echo $codigo ?>" readonly>
-                </div>
-                <div class="col-md-2 col-4 text-right">
-                    <button class="btn btn-outline-dark w-100 btn-sm mb-3">
-                        <i class="bi bi-pencil-square"></i> Editar
-                    </button>
-                </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center mb-4">
+                <img src="../img/popcorn.jpg" alt="" style="max-width: 500px;">
             </div>
 
-            <div class="row align-items-center mb-3">
-                <div class="col-md-2">
-                    <label for="input_nombre" class="form-label">Nombre:</label>
-                </div>
-                <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_nombre" value="<?php echo $datos["nombre_depto"]; ?>">
-                </div>
-                <div class="col-md-2 col-4 text-right">
-                    <button class="btn btn-outline-dark w-100 btn-sm mb-3">
-                        <i class="bi bi-pencil-square"></i> Editar
-                    </button>
-                </div>
-            </div>
+            <!-- Formulario para editar y presentar informacion -->
 
-            <div class="row align-items-center mb-3">
-                <div class="col-md-2">
-                    <label for="input_estreno" class="form-label">Fecha de estreno:</label>
-                </div>
-                <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_estreno" value="<?php echo $datos["nombre_depto"]; ?>">
-                </div>
-                <div class="col-md-2 col-4 text-right">
-                    <button class="btn btn-outline-dark w-100 btn-sm mb-3">
-                        <i class="bi bi-pencil-square"></i> Editar
-                    </button>
-                </div>
-            </div>
+            <div class="col-md-8 align-items-center">
 
 
-            <div class="row align-items-center mb-3">
-                <div class="col-md-2">
-                    <label for="input_duracion" class="form-label">Duracion Minutos:</label>
-                </div>
-                <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_duracion" value="<?php echo $datos["nombre_depto"]; ?>">
-                </div>
-                <div class="col-md-2 col-4 text-right">
-                    <button class="btn btn-outline-dark w-100 btn-sm mb-3">
-                        <i class="bi bi-pencil-square"></i> Editar
-                    </button>
-                </div>
-            </div>
+                <form action="" method="post">
+
+                    <div class="row align-items-center justify-content-center mb-3">
+                        <div class="col-md-2">
+                            <label for="input_id" class="form-label">ID:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control mb-3 me-2" id="input_id" value="<?php echo $codigo ?>" readonly>
+                        </div>
+                    </div>
 
 
-            <div class="row align-items-center mb-3">
-                <div class="col-md-2">
-                    <label for="input_director" class="form-label">Director:</label>
-                </div>
-                <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_director" value="<?php echo $datos["nombre_depto"]; ?>">
-                </div>
-                <div class="col-md-2 col-4 text-right">
-                    <button class="btn btn-outline-dark w-100 btn-sm mb-3">
-                        <i class="bi bi-pencil-square"></i> Editar
-                    </button>
-                </div>
-            </div>
+                    <div class="row align-items-center justify-content-center mb-3">
+                        <div class="col-md-2">
+                            <label for="input_nombre" class="form-label">Nombre:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control mb-3 me-2" id="input_nombre" name="input_nombre" value="<?php echo $datos["nombre_depto"]; ?>">
+                        </div>
+                    </div>
 
 
-        </form>
+                    <div class="row align-items-center justify-content-center mb-3">
+                        <div class="col-md-2">
+                            <label for="input_estreno" class="form-label">Fecha de estreno:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control mb-3 me-2" id="input_estreno" name="input_estreno" value="<?php echo $datos["nombre_depto"]; ?>">
+                        </div>
+                    </div>
 
 
-        <!-- Boton de agregar -->
+                    <div class="row align-items-center justify-content-center mb-3">
+                        <div class="col-md-2">
+                            <label for="input_duracion" class="form-label">Duracion Minutos:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control mb-3 me-2" id="input_duracion" name="input_duracion"  value="<?php echo $datos["nombre_depto"]; ?>">
+                        </div>
+                    </div>
 
-        <div class="row justify-content-center mt-3">
 
-            <div class="w-75 col-12 col-md-6 text-center">
+                    <div class="row align-items-center justify-content-center mb-3">
+                        <div class="col-md-2">
+                            <label for="input_director" class="form-label">Director:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control mb-3 me-2" id="input_director" name="input_director" value="<?php echo $datos["nombre_depto"]; ?>">
+                        </div>
+                    </div>
 
-                <button type="button" class="btn btn-outline-primary mb-3" id="btn_guardar">Guardar Cambios</button>
 
-                <div class="mb-3">
-                    <label for="" class="form-label mt-2 fs-5" id="output_resultado"></label>
-                </div>
+                    <!-- Boton de agregar -->
+
+                    <div class="row justify-content-center mt-3">
+                        <div class="w-75 col-12 col-md-6 text-center">
+
+                            <button type="submit" class="btn btn-outline-primary mb-3" id="btn_guardar_edicion" name="btn_guardar_edicion">Guardar Cambios</button>
+                            <!-- Confirmacion de accion -->
+                            <div class="mb-3">
+                                <label for="" class="form-label mt-2 fs-5" id="output_resultado"></label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+
             </div>
         </div>
+
+
+
 
     </main>
 
