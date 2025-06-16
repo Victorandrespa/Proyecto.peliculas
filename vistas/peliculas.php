@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>Peliculas</title>
 </head>
 
@@ -15,8 +16,19 @@
 
         <h1 class="mt-2">Peliculas</h1>
 
-        <div>
-            <a href="../index.html" class="btn btn btn-outline-dark mb-3">Menu</a>
+        <!-- boton de menu y agregar nuevo registro -->
+
+        <div class="d-flex justify-content-between">
+            <a href="../index.html" class="btn btn btn-outline-dark mb-3 align-self-start">Menu</a>
+            <div class="d-flex flex-column">
+                <a href="agregarPelicula.php" class="btn btn btn-outline-dark mb-2 "><i class="bi bi-cloud-arrow-up"></i>
+                    Agregar Pelicula</a>
+                <a href="agregarPais.php" class="btn btn btn-outline-dark mb-2"><i class="bi bi-cloud-arrow-up"></i>
+                    Agregar Pais</a>
+                <a href="agregarDirector.php" class="btn btn btn-outline-dark mb-2"><i class="bi bi-cloud-arrow-up"></i>
+                    Agregar Director</a>
+            </div>
+
         </div>
         <br>
 
@@ -25,11 +37,11 @@
             <!-- Lectura de base de datos php -->
             <?php
             require_once("../main/conexion.php");
-            $sql = "select * from departamentos";
+            $sql = "select * from peliculas";
             $ejecutar = mysqli_query($conexion, $sql);
 
             while ($resultado = mysqli_fetch_assoc($ejecutar)) {
-            ?>
+                ?>
 
                 <!-- card para mostrar perliculas -->
                 <div class="card m-2 p-1" style="width: 18rem;">
@@ -42,32 +54,32 @@
                         <!-- Nombre pelicula y datos -->
                         <h5 class="card-title"><?= $resultado['nombre']; ?></h5>
                         <p class="card-text">
-                            Id:<?= $resultado['nombre_depto']; ?>
+                            Id: <?= $resultado['pelicula_id']; ?>
                             <br>
-                            <?= $resultado['nombre_depto']; ?>
+                            Estreno: <?= $resultado['fecha_estreno']; ?>
                             <br>
-                            Estreno: <?= $resultado['nombre_depto']; ?>
+                            Duracion: <?= $resultado['duracion_minutos'] ?>
                             <br>
-                            Duracion: <?= $resultado['nombre_depto'] ?>
-                            <br>
-                            Director: <?= $resultado['nombre_depto'] ?>
+                            Director: <?= $resultado['director_id'] ?>
 
                         </p>
-                        
+
                         <!-- Boton de mas informacion -->
 
                         <form action="informacion.php" method="post">
                             <!-- Input oculto -->
-                            <input type="hidden" name="h_informacion" id="h_informacion" value="<?php echo $resultado['cod_depto']; ?>">
+                            <input type="hidden" name="h_informacion" id="h_informacion"
+                                value="<?php echo $resultado['pelicula_id']; ?>">
                             <!-- Botón que activa el envío -->
                             <div class="text-center">
-                                <button type="submit" class="btn btn btn-outline-dark mb-3" style="width: 10rem;">Informacion</button>
+                                <button type="submit" class="btn btn btn-outline-dark mb-3"
+                                    style="width: 10rem;">Informacion</button>
                             </div>
                         </form>
 
                     </div><!-- Fin contenido -->
                 </div><!-- Fin card -->
-            <?php
+                <?php
             } // Fin while
             ?>
         </div><!-- row -->

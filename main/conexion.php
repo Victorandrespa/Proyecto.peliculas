@@ -5,7 +5,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $password = ""; //usuario root no tiene contraseña
-$baseDatos = "fs2025_ciudadanos";
+$baseDatos = "fs2025_peliculas";
 
 //conexion con MySQL
 $conexion = mysqli_connect("$servidor", "$usuario","$password","$baseDatos");

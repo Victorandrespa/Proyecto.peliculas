@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Agregar</title>
+    <title>Agregar Pelicula</title>
 </head>
 
 <?php
@@ -26,7 +26,7 @@ if (!$conexion) {
 
 
 
-    <h1 class="mt-5">Nuevo Registro</h1>
+    <h1 class="mt-5">Nueva Pelicula</h1>
 
     <div class="d-flex justify-content-between">
         <div>
@@ -67,7 +67,7 @@ if (!$conexion) {
                     <label for="input_nuevo_estreno" class="form-label">Fecha de estreno:</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_nuevo_estreno" name="input_nuevo_estreno">
+                    <input type="date" class="form-control mb-3 me-2" id="input_nuevo_estreno" name="input_nuevo_estreno">
                 </div>
             </div>
 
@@ -77,7 +77,7 @@ if (!$conexion) {
                     <label for="input_nuevo_duracion" class="form-label">Duracion Minutos:</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_nuevo_duracion" name="input_nuevo_duracion">
+                    <input type="number" class="form-control mb-3 me-2" id="input_nuevo_duracion" name="input_nuevo_duracion">
                 </div>
             </div>
 
@@ -97,15 +97,13 @@ if (!$conexion) {
 
                 <div class="w-75 col-12 col-md-6 text-center">
 
-                    <button type="submit" class="btn btn-outline-primary mb-3" id="btn_agregar_registro" name="btn_agregar_registro">Agregar Registro</button>
+                    <button type="submit" class="btn btn-outline-primary mb-3" id="btn_agregar_pelicula" name="btn_agregar_registro">Agregar Registro</button>
                     <!-- Confirmacion de accion -->
                     <div class="mb-3">
                         <label for="" class="form-label mt-2 fs-5" id="output_resultado"></label>
                     </div>
                 </div>
             </div>
-
-
 
         </form>
 

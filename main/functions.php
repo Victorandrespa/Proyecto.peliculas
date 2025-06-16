@@ -24,25 +24,30 @@ if (isset($_POST["btn_eliminar"])) {
 
 // Procesos Insertar ----------------------------
 
+//Agregar Pelicula
 
-if (isset($_POST["btn_insertar_depto"])) {
+if (isset($_POST["btn_agregar_pelicula"])) {
 
     //recibo datos de formulario
-    $codigo = $_POST["txt_cod_depto"];
-    $nombre = $_POST["txt_nombre_depto"];
-    $cod_region = $_POST["txt_cod_region"];
+    $id = $_POST["input_nuevo_id"];
+    $nombre = $_POST["input_nuevo_nombre"];
+    $estreno = $_POST["input_nuevo_estreno"];
+    $duracion = $_POST["input_nuevo_duracion"];
+    $director = $_POST["input_nuevo_director"];
 
     require_once("conexion.php");
-    $sql = "insert into departamentos (cod_depto, nombre_depto, cod_region) 
-    values (" . $codigo . ",
+    $sql = "insert into peliculas (pelicula_id, nombre, fecha_estreno, duracion_minutos, director_id) 
+    values (" . $id . ",
     '" . $nombre . "',
-    '" . $cod_region . "');";
+    '" . $estreno . "',
+    '" . $duracion . "',
+    '" . $director . "');";
 
 
     try {
         $ejecutar = mysqli_query($conexion, $sql);
         echo "<br>Datos almacenados";
-        header("Location: ../vistas/departamentos.php");
+        header("Location: ../vistas/peliculas.php");
         exit;
     } catch (Exception $th) {
         echo "<br>Datos no fueron guardados<br>" . $th;
