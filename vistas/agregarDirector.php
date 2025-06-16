@@ -47,7 +47,7 @@ if (!$conexion) {
                     <label for="input_nuevo_id" class="form-label">Director ID:</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_nuevo_id" name="input_nuevo_id">
+                    <input type="text" class="form-control mb-3 me-2" id="input_director_id" name="input_director_id">
                 </div>
             </div>
 
@@ -57,7 +57,7 @@ if (!$conexion) {
                     <label for="input_nuevo_nombre" class="form-label">Nombre:</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_nuevo_nombre" name="input_nuevo_nombre">
+                    <input type="text" class="form-control mb-3 me-2" id="input_director_nombre" name="input_director_nombre">
                 </div>
             </div>
 
@@ -67,7 +67,7 @@ if (!$conexion) {
                     <label for="input_nuevo_apellido" class="form-label">Apellido:</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="date" class="form-control mb-3 me-2" id="input_nuevo_apellido" name="input_nuevo_apellido">
+                    <input type="text" class="form-control mb-3 me-2" id="input_director_apellido" name="input_director_apellido">
                 </div>
             </div>
 
@@ -77,7 +77,7 @@ if (!$conexion) {
                     <label for="input_nuevo_paisID" class="form-label">Pais ID:</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="number" class="form-control mb-3 me-2" id="input_nuevo_paisID" name="input_nuevo_paisID">
+                    <input type="number" class="form-control mb-3 me-2" id="input_pais_id" name="input_pais_id">
                 </div>
             </div>
 
@@ -94,6 +94,7 @@ if (!$conexion) {
                         <label for="" class="form-label mt-2 fs-5" id="output_resultado"></label>
                     </div>
                 </div>
+
             </div>
 
         </form>

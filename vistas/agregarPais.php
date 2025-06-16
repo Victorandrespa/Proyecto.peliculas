@@ -47,17 +47,17 @@ if (!$conexion) {
                     <label for="input_nuevo_id" class="form-label">Pais ID:</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_nuevo_id" name="input_nuevo_id">
+                    <input type="text" class="form-control mb-3 me-2" id="input_pais_id" name="input_pais_id">
                 </div>
             </div>
 
 
             <div class="row align-items-center justify-content-center mb-3">
                 <div class="col-md-2">
-                    <label for="input_nuevo_nombre" class="form-label">Nombre:</label>
+                    <label for="input_nuevo_nombre" class="form-label">Pais:</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_nuevo_nombre" name="input_nuevo_nombre">
+                    <input type="text" class="form-control mb-3 me-2" id="input_pais_nombre" name="input_pais_nombre">
                 </div>
             </div>
 

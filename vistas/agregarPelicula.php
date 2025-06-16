@@ -87,7 +87,7 @@ if (!$conexion) {
                     <label for="input_director" class="form-label">Director:</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" class="form-control mb-3 me-2" id="input_director" name="input_nuevo_director">
+                    <input type="text" class="form-control mb-3 me-2" id="input_nuevo_director" name="input_nuevo_director">
                 </div>
             </div>
 
@@ -97,7 +97,7 @@ if (!$conexion) {
 
                 <div class="w-75 col-12 col-md-6 text-center">
 
-                    <button type="submit" class="btn btn-outline-primary mb-3" id="btn_agregar_pelicula" name="btn_agregar_registro">Agregar Registro</button>
+                    <button type="submit" class="btn btn-outline-primary mb-3" id="btn_agregar_pelicula" name="btn_agregar_pelicula">Agregar Pelicula</button>
                     <!-- Confirmacion de accion -->
                     <div class="mb-3">
                         <label for="" class="form-label mt-2 fs-5" id="output_resultado"></label>

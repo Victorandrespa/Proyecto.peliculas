@@ -43,6 +43,29 @@ if (isset($_POST["btn_agregar_pelicula"])) {
     '" . $duracion . "',
     '" . $director . "');";
 
+    try {
+        $ejecutar = mysqli_query($conexion, $sql);
+        echo "<br>Datos almacenados";
+        header("Location: ../vistas/peliculas.php");
+        exit;
+    } catch (Exception $th) {
+        echo "<br>Datos no fueron guardados<br>" . $th;
+    }
+}
+
+//Agregar Pais
+
+if (isset($_POST["btn_agregar_pais"])) {
+
+    //recibo datos de formulario
+    $id = $_POST["input_pais_id"];
+    $nombre = $_POST["input_pais_nombre"];
+   
+
+    require_once("conexion.php");
+    $sql = "insert into paises (pais_id, nombre) 
+    values (" . $id . ",
+    '" . $nombre . "');";
 
     try {
         $ejecutar = mysqli_query($conexion, $sql);
@@ -53,6 +76,37 @@ if (isset($_POST["btn_agregar_pelicula"])) {
         echo "<br>Datos no fueron guardados<br>" . $th;
     }
 }
+
+
+//Agregar Director
+
+if (isset($_POST["btn_agregar_director"])) {
+
+    //recibo datos de formulario
+    $id = $_POST["input_director_id"];
+    $nombre = $_POST["input_director_nombre"];
+    $apellido = $_POST["input_director_apellido"];
+    $paisID = $_POST["input_pais_id"];
+
+   
+
+    require_once("conexion.php");
+    $sql = "insert into directores (director_id, nombre, apellido, pais_id) 
+    values (" . $id . ",
+    '" . $nombre . "',
+    '" . $apellido . "',
+    '" . $paisID . "');";
+
+    try {
+        $ejecutar = mysqli_query($conexion, $sql);
+        echo "<br>Datos almacenados";
+        header("Location: ../vistas/peliculas.php");
+        exit;
+    } catch (Exception $th) {
+        echo "<br>Datos no fueron guardados<br>" . $th;
+    }
+}
+
 
 
 
