@@ -19,14 +19,14 @@
         <!-- boton de menu y agregar nuevo registro -->
 
         <div class="d-flex justify-content-between">
-            <a href="../index.html" class="btn btn btn-outline-dark mb-3 align-self-start">Menu</a>
+            <a href="../index.html" class="btn btn btn-outline-dark mb-3 align-self-start">Menu <i class="bi bi-house"></i></a>
             <div class="d-flex flex-column">
-                <a href="agregarPelicula.php" class="btn btn btn-outline-dark mb-2 "><i class="bi bi-cloud-arrow-up"></i>
-                    Agregar Pelicula</a>
                 <a href="agregarPais.php" class="btn btn btn-outline-dark mb-2"><i class="bi bi-cloud-arrow-up"></i>
                     Agregar Pais</a>
                 <a href="agregarDirector.php" class="btn btn btn-outline-dark mb-2"><i class="bi bi-cloud-arrow-up"></i>
                     Agregar Director</a>
+                <a href="agregarPelicula.php" class="btn btn btn-outline-primary mb-2 "><i class="bi bi-cloud-arrow-up"></i>
+                    Agregar Pelicula</a>
             </div>
 
         </div>
@@ -41,7 +41,7 @@
             $ejecutar = mysqli_query($conexion, $sql);
 
             while ($resultado = mysqli_fetch_assoc($ejecutar)) {
-                ?>
+            ?>
 
                 <!-- card para mostrar perliculas -->
                 <div class="card m-2 p-1" style="width: 18rem;">
@@ -66,7 +66,7 @@
 
                         <!-- Boton de mas informacion -->
 
-                        <form action="informacion.php" method="post">
+                        <form action="editar-info.php" method="post">
                             <!-- Input oculto -->
                             <input type="hidden" name="h_informacion" id="h_informacion"
                                 value="<?php echo $resultado['pelicula_id']; ?>">
@@ -79,7 +79,7 @@
 
                     </div><!-- Fin contenido -->
                 </div><!-- Fin card -->
-                <?php
+            <?php
             } // Fin while
             ?>
         </div><!-- row -->

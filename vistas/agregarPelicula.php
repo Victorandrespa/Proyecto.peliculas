@@ -84,7 +84,7 @@ if (!$conexion) {
 
             <div class="row align-items-center justify-content-center mb-3">
                 <div class="col-md-2">
-                    <label for="input_director" class="form-label">Director:</label>
+                    <label for="input_director" class="form-label">Director ID:</label>
                 </div>
                 <div class="col-md-8">
                     <input type="text" class="form-control mb-3 me-2" id="input_nuevo_director" name="input_nuevo_director">

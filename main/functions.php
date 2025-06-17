@@ -7,14 +7,14 @@ require_once("conexion.php");
 
 // Porcesos Eliminar ----------------------------
 
-if (isset($_POST["btn_eliminar"])) {
-    $codigo = $_POST["h_codigo_borrar"];
-    $sql = "delete from ciudadanos where dpi = " . $codigo;
+if (isset($_POST["btn_eliminar_pelicula"])) {
+    $codigo = $_POST["h_borrar_pelicula"];
+    $sql = "delete from peliculas where pelicula_id = " . $codigo;
 
     try {
         $ejecutar = mysqli_query($conexion, $sql);
         echo "<br>Datos almacenados";
-        header("Location:../vistas/ciudadanos.php");
+        header("Location:../vistas/peliculas.php");
         exit;
     } catch (Exception $th) {
         echo "<br>Datos no fueron guardados<br>" . $th;
@@ -45,8 +45,10 @@ if (isset($_POST["btn_agregar_pelicula"])) {
 
     try {
         $ejecutar = mysqli_query($conexion, $sql);
-        echo "<br>Datos almacenados";
-        header("Location: ../vistas/peliculas.php");
+         echo "<script>
+                alert('Registro agregado correctamente.');
+                window.location.href = '../vistas/peliculas.php';
+            </script>";
         exit;
     } catch (Exception $th) {
         echo "<br>Datos no fueron guardados<br>" . $th;
@@ -60,7 +62,7 @@ if (isset($_POST["btn_agregar_pais"])) {
     //recibo datos de formulario
     $id = $_POST["input_pais_id"];
     $nombre = $_POST["input_pais_nombre"];
-   
+
 
     require_once("conexion.php");
     $sql = "insert into paises (pais_id, nombre) 
@@ -70,7 +72,10 @@ if (isset($_POST["btn_agregar_pais"])) {
     try {
         $ejecutar = mysqli_query($conexion, $sql);
         echo "<br>Datos almacenados";
-        header("Location: ../vistas/peliculas.php");
+       echo "<script>
+                alert('Registro agregado correctamente.');
+                window.location.href = '../vistas/peliculas.php';
+            </script>";
         exit;
     } catch (Exception $th) {
         echo "<br>Datos no fueron guardados<br>" . $th;
@@ -88,7 +93,7 @@ if (isset($_POST["btn_agregar_director"])) {
     $apellido = $_POST["input_director_apellido"];
     $paisID = $_POST["input_pais_id"];
 
-   
+
 
     require_once("conexion.php");
     $sql = "insert into directores (director_id, nombre, apellido, pais_id) 
@@ -100,7 +105,10 @@ if (isset($_POST["btn_agregar_director"])) {
     try {
         $ejecutar = mysqli_query($conexion, $sql);
         echo "<br>Datos almacenados";
-        header("Location: ../vistas/peliculas.php");
+        echo "<script>
+                alert('Registro agregado correctamente.');
+                window.location.href = '../vistas/peliculas.php';
+            </script>";
         exit;
     } catch (Exception $th) {
         echo "<br>Datos no fueron guardados<br>" . $th;
@@ -112,29 +120,37 @@ if (isset($_POST["btn_agregar_director"])) {
 
 // Porcesos Modificar ----------------------------
 
-if (isset($_POST["btn_modificar_depto"])) {
+
+// Modificar pelicula
+
+if (isset($_POST["btn_guardar_edicion"])) {
 
     // recibo datos formulario
-    $cod_depto = $_POST["txt_cod_depto"];
-    $nombre = $_POST["txt_nombre_depto"];
-    $cod_region = $_POST["txt_cod_region"];
-    
+    $peliculaId = $_POST["input_id"];
+    $nombre = $_POST["input_nombre"];
+    $estreno = $_POST["input_estreno"];
+    $duracion = $_POST["input_duracion"];
+    $director = $_POST["input_director"];
 
-    $sql = 'UPDATE departamentos SET 
-        nombre_depto = "' . $nombre . '", 
-        cod_region = "' . $cod_region . '" 
+
+    $sql = 'UPDATE peliculas SET 
+        nombre = "' . $nombre . '", 
+        fecha_estreno = "' . $estreno . '", 
+        duracion_minutos = "' . $duracion . '",  
+        director_id = "' . $director . '" 
         
-        WHERE cod_depto = ' . $cod_depto . ';';
+        WHERE pelicula_id = ' . $peliculaId . ';';
 
     echo $sql;
 
     try {
         $ejecutar = mysqli_query($conexion, $sql);
-        header('Location: ../vistas/departamentos.php');
+        echo "<script>
+                alert('Cambios guardados correctamente.');
+                window.location.href = '../vistas/peliculas.php';
+            </script>";
+        exit;
     } catch (Exception $th) {
         echo '<br> Datos no fueron actualizados' . $th;
     }
 }
-
-
-?>
